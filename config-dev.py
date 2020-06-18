@@ -2,6 +2,7 @@
 # also this file must be renamed config.py before use
 
 # Wireless AP config
+apstate = '<True|False>'
 apbssid = '<AP BSSID>'
 appass = '<AP Password>'
 
