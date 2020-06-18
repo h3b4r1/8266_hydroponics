@@ -1,1 +1,1 @@
-# Customer functions and classes
+# Custom functions and classes
