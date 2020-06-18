@@ -8,7 +8,8 @@ import gc
 #webrepl.start()
 gc.collect()
 import network
+from config import *
 
 sta_if = network.WLAN(network.STA_IF)
-sta_if.active(True)
-sta_if.connect('it2g','B33fC4k3!')
+sta_if.active(apstate)
+sta_if.connect('apbssid','appass')
