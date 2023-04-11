@@ -1,15 +1,24 @@
-# This file is executed on every boot (including wake-boot from deepsleep)
-#import esp
-#esp.osdebug(None)
-import uos, machine
-#uos.dupterm(None, 1) # disable REPL on UART(0)
 import gc
-#import webrepl
-#webrepl.start()
-gc.collect()
 import network
-from config import *
+import json
+from time import sleep
 
-sta_if = network.WLAN(network.STA_IF)
-sta_if.active(apstate)
-sta_if.connect('apbssid','appass')
+# Garbage collect
+gc.enable()
+
+# Load config
+with open('config.json') as fh:
+    config = json.load(fh)
+
+# Setup wifi connection
+sleep(10)
+constate = False
+count = 0
+while not constate and count < 11:
+    sta_if = network.WLAN(network.STA_IF)
+    sta_if.active(True)
+    sta_if.connect(config["network"]["ssid"], config["network"]["secret"])
+    sleep(2)
+    count += 1
+    constate = sta_if.isconnected()
+    print(".", end="")
