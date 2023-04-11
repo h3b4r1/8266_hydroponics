@@ -16,20 +16,25 @@ Once a base system has been tested I will post a parts list and other design inf
 4. Use of cheap commodity parts
 5. Either mains or solar/battery powered
 
-## Requirements
-1. Must be able to run a small pump
-2. Must be able to cope with real time for scheduling etc
-3. Must connect to a wifi network
-4. Must be able to sense water level in both the reservoir and bed
-5. Must be able to sense light (P2)
-6. Must be able to sense voltage for (P2)
-   1. battery level
-   2. solar input
+## Requirements/Features
+1. Must be able to cope with real time for scheduling etc
+2. Must connect to a wifi network
+3. Must be able to sense water level in both the reservoir and bed
+4. Must be able to feedback via lcd
+5. Can operate:
+   1. a small pump
+   2. a grow light
+6. Can sense:
+   1. battery voltage
+   2. solar input voltage
+   3. Solution conductivity
+   4. solution ph
+   5. light
 
 ## Parts list
 1. ESP8266 Microcontroller
 2. Water pump (get specs)
-3. 
+3. Clay beads
 
 ## Phasing
 ### MVP
